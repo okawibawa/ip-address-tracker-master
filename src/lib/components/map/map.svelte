@@ -16,7 +16,9 @@
 		if (browser) {
 			const leaflet = await import('leaflet');
 
-			map = leaflet.map(mapElement).setView([-8.547913, 115.169539], 15);
+			map = leaflet
+				.map(mapElement, { zoomControl: false, scrollWheelZoom: false })
+				.setView([-8.547913, 115.169539], 15);
 
 			leaflet
 				.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
